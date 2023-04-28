@@ -19,9 +19,6 @@ const Item = ({ data }) => {
     e.target.src = './img/placeholder-avatar.png'
   }
 
-  const handleVoid = () => {
-    javascript:void(0)
-  }
 
   return (
     <div className='container'>
@@ -36,7 +33,7 @@ const Item = ({ data }) => {
               onError={handleErrorCoverImg}
               className='img-preview'
             />
-            
+
             <div className='table-wrapper'>
             <div className='row'>
                 <span className='title'>Views </span>
@@ -60,16 +57,17 @@ const Item = ({ data }) => {
               <div className='user-img-container'>
                 <img
                   className='user-img'
+                  alt='userphoto'
                   src={treffer.userImageURL}
                   onClick={() => handleClickUser(`https://pixabay.com/users/${treffer.user}-${treffer.user_id}`)}
                   onError={handleErrorUserImg}
                 />
               </div>
               <div className='user-name'>
-                Uploaded by <a 
-                              href={handleVoid()}
+                Uploaded by <button 
+                              className='user-link'
                               onClick={() => handleClickUser(`https://pixabay.com/users/${treffer.user}-${treffer.user_id}`)} >{treffer.user}
-                            </a>
+                            </button>
               </div>
             </div>
 
